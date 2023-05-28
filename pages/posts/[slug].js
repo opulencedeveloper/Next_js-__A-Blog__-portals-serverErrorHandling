@@ -31,8 +31,6 @@ export async function getStaticProps(context) {
 export function getStaticPaths() {
   const postFilenames = getPostsFiles();
 
-  //we want to use the filename(postFilenames) as a slug, so we remove the extention of the file, if it has any,
-  //so make sure your file name(postFilenames) has the slug format, which is seperating each word with dash
   const slugs = postFilenames.map((fileName) => fileName.replace(/\.md$/, ""));
 
   return {
